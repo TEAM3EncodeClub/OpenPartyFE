@@ -1,0 +1,10 @@
+<div *ngFor="let song of songs">
+  <div>{{ song.title }}</div>
+  <button (click)="playSong(song)">Play</button>
+</div>
+
+<div *ngIf="currentSong">
+  <div>{{ currentSong.title }}</div>
+  <button (click)="pauseSong()">Pause</button>
+  <button (click)="stopSong()">Stop</button>
+</div>
