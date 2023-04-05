@@ -1,10 +1,12 @@
-<div *ngFor="let song of songs">
-  <div>{{ song.title }}</div>
-  <button (click)="playSong(song)">Play</button>
-</div>
-
-<div *ngIf="currentSong">
-  <div>{{ currentSong.title }}</div>
-  <button (click)="pauseSong()">Pause</button>
-  <button (click)="stopSong()">Stop</button>
+<div>
+  <h1>Music Player</h1>
+  <div *ngIf="songs.length === 0">Loading...</div>
+  <div *ngIf="songs.length > 0">
+    <p>Currently playing: {{ songs[currentSongIndex] }}</p>
+    <button (click)="playSong()">Play</button>
+    <button (click)="pauseSong()">Pause</button>
+    <button (click)="nextSong()">Next</button>
+    <button (click)="previousSong()">Previous</button>
+    <button (click)="viewCollection()">View Collection</button>
+  </div>
 </div>
